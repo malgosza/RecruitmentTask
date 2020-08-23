@@ -9,15 +9,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
 
-public class FillRegistrationForm {
+public class FillRegistrationFormTest {
+    private static final String DRIVER_PATH = "C:\\Users\\User\\Desktop\\chromedriver_win32\\chromedriver.exe";
     private WebDriver driver;
     private String baseUrl;
 
     @Before
     public void setUp() throws Exception {
-        //Property should be set in another file
         System.setProperty("webdriver.chrome.driver",
-                "C:\\Users\\User\\Desktop\\chromedriver_win32\\chromedriver.exe");
+                DRIVER_PATH);
 
         driver = new ChromeDriver();
         baseUrl = "https://dev-1.clicktrans.pl/register-test/courier";
