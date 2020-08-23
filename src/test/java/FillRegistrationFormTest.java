@@ -1,4 +1,5 @@
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -53,6 +54,10 @@ public class FillRegistrationFormTest {
 
         WebElement submitButton = driver.findElement(By.id("user_register_submit"));
         submitButton.click();
+
+        String resultMessage = driver.findElement(By.xpath("//div[@class='ui container flashmsg']/div[@class='ui success message']")).getText();
+        String expectedMessage = "OK - some registration logic is mocked";
+        Assert.assertEquals(resultMessage, expectedMessage);
     }
 
     @After
